@@ -1,0 +1,222 @@
+{
+    "domains": [
+        {
+            "DomainId": "foo.com"
+        },
+        {
+            "DomainId": "foo2.com"
+        }
+    ],
+    "accounts": [
+        {
+            "Username": "gaUser1",
+            "UserDisplayName": "Global Admin 1",
+            "UserDescription": "Global Admin 1 - Breakglass account",
+            "Password": "afasfj45$%",
+            "UserPrincipalname": "gaUser1@serbanlabs.org"
+        },
+        {
+            "Username": "gaUser2",
+            "UserDisplayName": "Global Admin 2",
+            "UserDescription": "Global Admin 2 - Breakglass account",
+            "Password": "afasfj45$%",
+            "UserPrincipalname": "gaUser2@serbanlabs.org"
+        }
+    ],
+    "caLocations": [
+        {
+            "displayName": "myAPAC",
+            "isTrusted": "true",
+            "ipRanges": [
+                {
+                    "cidrAddress": "103.246.196.0/23"
+                },
+                {
+                    "cidrAddress": "161.121.0.0/16"
+                }
+            ]
+        },
+        {
+            "DisplayName": "myEMEA",
+            "isTrusted": "true",
+            "ipRanges": [
+                {
+                    "cidrAddress": "170.148.0.0/16"
+                }
+            ]
+        },
+        {
+            "DisplayName": "myNA",
+            "isTrusted": "true",
+            "ipRanges": [
+                {
+                    "cidrAddress": "159.53.0.0/16"
+                },
+                {
+                    "cidrAddress": "146.143.0.0/16"
+                }
+            ]
+        }
+    ],
+    "caGroups": [
+        {
+            "displayName": "Test Group1",
+            "description": "This is the description for Test Group1",
+            "mailNickname": "TestGroup1",
+            "mailEnabled": "false",
+            "IsAssignableToRole": "false"
+        },
+        {
+            "displayName": "Test Group2",
+            "description": "This is the description for Test Group2",
+            "mailNickname": "TestGroup2",
+            "mailEnabled": "false",
+            "IsAssignableToRole": "false"
+        }
+    ],
+    "caPolicies": [
+        {
+            "displayName": "O365 Privileged Admins MFA",
+            "state": "enabledForReportingButNotEnforced",
+            "includeApplications": [
+                "All"
+            ],
+            "excludeApplications": [],
+            "includeUserActions": [],
+            "includeAuthenticationContextClassReferences": [],
+            "platforms": [],
+            "devices": [],
+            "includeUsers": [],
+            "excludeUsers": [
+                "gaUser1@serbanlabs.org",
+                "gaUser2@serbanlabs.org"
+            ],
+            "includeRoles": [
+                "Application administrator",
+                "Authentication Administrator",
+                "Billing Administrator",
+                "Cloud Application Administrator",
+                "Conditional Access Administrator",
+                "Exchange Administrator",
+                "Global Administrator",
+                "Helpdesk Administrator",
+                "Password Administrator",
+                "Privileged Authentication Administrator",
+                "Privileged Role Administrator",
+                "Security Administrator",
+                "SharePoint Administrator",
+                "User Administrator"
+            ],
+            "excludeRoles": [],
+            "locations": {
+                "includeLocations": [
+                    "All"
+                ],
+                "excludeLocations": [
+                    "myAPAC",
+                    "myEMEA",
+                    "myNA"
+                ]
+            },
+            "clientAppTypes": [
+                "browser",
+                "mobileAppsAndDesktopClients"
+            ],
+            "signInRiskLevels": [],
+            "userRiskLevels": [],
+            "signInFrequency": {
+                "value": 12,
+                "type": "hours",
+                "isEnabled": true
+            },
+            "grantControls": {
+                "operator": "OR",
+                "builtInControls": [
+                    "mfa"
+                ],
+                "customAuthenticationFactors": [],
+                "termsOfUse": []
+            },
+            "sessionControls": {
+                "ApplicationEnforcedRestrictions":  {
+                    "IsEnabled":  null
+                },
+                "CloudAppSecurity":  {
+                    "CloudAppSecurityType":  null,
+                    "IsEnabled":  null
+                },
+                "DisableResilienceDefaults":  false,
+                "PersistentBrowser":  {
+                    "IsEnabled":  null,
+                    "Mode":  null
+                },
+                "AdditionalProperties":  {
+
+                }
+            }
+        },
+        {
+            "displayName": "MFA Trusted IP Ranges Only Policy",
+            "state": "enabledForReportingButNotEnforced",
+            "includeApplications": [
+                "All"
+            ],
+            "excludeApplications": [],
+            "includeUserActions": [],
+            "includeAuthenticationContextClassReferences": [],
+            "platforms": [],
+            "devices": [],
+            "includeUsers": [
+                "All"
+            ],
+            "excludeUsers": [
+                "gaUser1@serbanlabs.org",
+                "gaUser2@serbanlabs.org"
+            ],
+            "includeRoles": [],
+            "excludeRoles": [],
+            "locations": {
+                "includeLocations": [
+                    "All"
+                ],
+                "excludeLocations": [
+                    "myAPAC",
+                    "myEMEA",
+                    "myNA"
+                ]
+            },
+            "clientAppTypes": [
+                "browser",
+                "mobileAppsAndDesktopClients"
+            ],
+            "signInRiskLevels": [],
+            "userRiskLevels": [],
+            "signInFrequency": {},
+            "grantControls": {
+                "operator": "OR",
+                "builtInControls": [
+                    "mfa"
+                ],
+                "customAuthenticationFactors": [],
+                "termsOfUse": []
+            },
+            "sessionControls": {
+                "ApplicationEnforcedRestrictions":  {
+                    "IsEnabled":  null
+                },
+                "CloudAppSecurity":  {
+                    "CloudAppSecurityType":  null,
+                    "IsEnabled":  null
+                },
+                "DisableResilienceDefaults":  false,
+                "PersistentBrowser":  {
+                    "IsEnabled":  null,
+                    "Mode":  null
+                },
+                "AdditionalProperties":  {
+
+                }
+            }
+        }
+    ]
+}
